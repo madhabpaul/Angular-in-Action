@@ -7,7 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { UserModule } from './user/user.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

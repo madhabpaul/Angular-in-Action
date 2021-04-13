@@ -80,4 +80,35 @@ Switch Case
     </ng-template>
   </ngb-carousel>
 </div>
+<div  class="container-fluid form" >
+  <form #contactForm="ngForm" class="form" (ngSubmit)="contactSubmit(contactForm); contactForm.reset()">
+    <div class="form-group">
+      <input type="text" name="name" required #name="ngModel" placeholder="Name" class="form-control" ngModel>
+      <span *ngIf="name.invalid && name.touched">Enter you name</span>
+    </div>
+    <div class="form-group">
+      <input type="text" name="email" placeholder="Email" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="submit"  name="Send" [disabled]="contactForm.invalid" class="btn btn-success">
+      <input type="button" value="Reset" class="btn btn-primary" (click)="contactForm.reset()">
+    </div>
+  </form>
+</div>
+<h1>Reactive Form</h1>
+<div  class="container-fluid form" >
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+  
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+</div>
 <router-outlet></router-outlet>

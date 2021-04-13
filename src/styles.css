@@ -13,3 +13,10 @@
 .active{
     color: aqua;
 }
+
+.form{
+    margin: 30px;
+    max-width: fit-content;
+    padding: 20px;
+    align-items: center;
+}
